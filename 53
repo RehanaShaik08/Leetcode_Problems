@@ -1,0 +1,21 @@
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int cur = 0, maxx = -100000;
+
+        
+        for (int num: nums) {
+            cur += num;
+
+            
+            if (cur > maxx)
+                maxx = cur;
+
+            
+            if (cur < 0)
+                cur = 0;
+        }
+
+        
+        return maxx;
+    }
+}
