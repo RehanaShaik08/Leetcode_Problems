@@ -1,0 +1,20 @@
+class Solution {
+    public int fib(int n) {
+  List<Integer> listFibo = new ArrayList<>();
+        int prev = 0, current = 1;
+                int next = 0;
+
+        if(n==1){
+            next=1;
+        }
+        listFibo.add(0);
+        listFibo.add(1);
+        while (listFibo.size() - 1 < n) {
+            next = prev + current;
+            listFibo.add(next);
+            prev = current;
+            current = next;
+        }
+        return next;
+    }
+}
